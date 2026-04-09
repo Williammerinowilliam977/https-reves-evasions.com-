@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiang Mai – Thaïlande – Rêves & Évasions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('images/temple-reves-evasions.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="content">
+    <h2>Chiang Mai - La Rose du Nord</h2>
+    <p>Chiang Mai, nichée dans les montagnes du nord, est connue pour sa culture riche, ses temples anciens et ses paysages montagneux spectaculaires. C'est l'endroit idéal pour découvrir l'âme authentique de la Thaïlande.</p>
+
+    <h3 style="color: gold; margin-top: 30px;">Points d'Intérêt</h3>
+    <p>
+      <strong>Doi Suthep :</strong> Un temple doré perché sur la montagne offrant une vue panoramique.<br>
+      <strong>Vieille ville :</strong> Des ruelles pittoresques remplies d'histoire et de caractère.<br>
+      <strong>Marché du dimanche :</strong> Un marché de nuit vibrant avec de l'artisanat local.<br>
+      <strong>Sanctuaire des héléphantsé :</strong> Une opportunité unique d'interagir avec ces créatures majestueuses.
+    </p>
+
+    <div class="gallery">
+      <img src="images/chiangmai1.jpg" alt="Doi Suthep" onerror="this.src='https://via.placeholder.com/300x250?text=Doi+Suthep'">
+      <img src="images/chiangmai2.jpg" alt="Vieille ville" onerror="this.src='https://via.placeholder.com/300x250?text=Vieille+Ville'">
+      <img src="images/chiangmai3.jpg" alt="Temple" onerror="this.src='https://via.placeholder.com/300x250?text=Temple'">
+    </div>
+
+    <p><strong>Meilleure saison :</strong> Octobre à avril (température agréable)</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

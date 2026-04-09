@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Foire Aux Questions - Réponses à toutes vos questions sur vos voyages en Thaïlande avec Thaïlande Rêves & Évasions.">
+  <meta name="keywords" content="FAQ, questions, réponses, Thaïlande, voyage, réservation">
+  <title>FAQ – Thaïlande Rêves & Évasions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: url('images/fond-principal.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(128, 0, 0, 0.85);
+      padding: 20px 0;
+      border-bottom: 3px solid gold;
+      position: relative;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .language-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .language-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .language-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    header img {
+      width: 220px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #8B0000;
+      border-top: 2px solid gold;
+      border-bottom: 2px solid gold;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .faq-container {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      border: 2px solid gold;
+      padding: 30px;
+    }
+
+    .faq-category {
+      margin-bottom: 40px;
+    }
+
+    .faq-category h2 {
+      color: gold;
+      font-size: 1.8em;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid gold;
+    }
+
+    .faq-item {
+      background: rgba(139, 0, 0, 0.4);
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border-left: 4px solid gold;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      color: gold;
+      font-size: 1.05em;
+    }
+
+    .faq-question:hover {
+      background: rgba(139, 0, 0, 0.6);
+      transform: translateX(5px);
+    }
+
+    .faq-toggle {
+      font-size: 1.3em;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 20px;
+    }
+
+    .faq-answer p {
+      font-size: 1em;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      color: #e0e0e0;
+    }
+
+    .faq-answer ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .faq-answer li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #e0e0e0;
+    }
+
+    .faq-answer li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00ff00;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #8B0000;
+      color: gold;
+      text-align: center;
+      padding: 12px 20px;
+      border-top: 2px solid gold;
+      font-size: 0.85em;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.9em;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .faq-container {
+        padding: 20px;
+      }
+
+      .faq-question {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>❓ Foire Aux Questions</h1>
+    <p>Trouvez les réponses à vos questions les plus fréquentes</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="faq-container">
+
+      <!-- RÉSERVATION & PRIX -->
+      <div class="faq-category">
+        <h2>💳 Réservation & Prix</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Combien de temps avant le départ dois-je faire ma réservation ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Nous recommandons une réservation <strong>minimum 2-3 semaines avant votre départ</strong> pour vous assurer la meilleure disponibilité et les meilleurs tarifs. Cependant, nous pouvons organiser des départs plus courts dans les 48 heures si nécessaire (avec frais supplémentaires possibles).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quels modes de paiement acceptez-vous ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Nous acceptons:</p>
+            <ul>
+              <li>Virement bancaire (international)</li>
+              <li>Carte de crédit/débit (Visa, MasterCard)</li>
+              <li>PayPal</li>
+              <li>Paiement en 3 fois possible*</li>
+            </ul>
+            <p style="margin-top: 12px; font-size: 0.9em;">*Conditions s'appliquent. Contactez-nous pour plus d'informations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Y a-t-il une annulation gratuite ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Oui !</strong> Nous proposons une annulation gratuite jusqu'à <strong>7 jours avant</strong> votre départ. Au-delà de ce délai:</p>
+            <ul>
+              <li>3-7 jours: 50% du montant facturé</li>
+              <li>Moins de 3 jours: 100% du montant facturé</li>
+            </ul>
+            <p style="margin-top: 12px;">Note: Certaines offres partenaires peuvent avoir des conditions différentes.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Comment sont calculés les prix ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Les prix incluent:</p>
+            <ul>
+              <li>Hébergement (sauf mention contraire)</li>
+              <li>Repas spécifiés</li>
+              <li>Transports locaux</li>
+              <li>Activités et visites guidées</li>
+              <li>Support 24/7</li>
+            </ul>
+            <p style="margin-top: 12px;">Les prix n'incluent pas: les vols internationaux, les assurances, les repas non mentionnés, les pourboires.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESTINATION & ACTIVITÉS -->
+      <div class="faq-category">
+        <h2>🗺️ Destinations & Activités</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quelle est la meilleure saison pour visiter la Thaïlande ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Novembre à février</strong> est la meilleure saison avec:</p>
+            <ul>
+              <li>Températures: 25-30°C (agréable)</li>
+              <li>Peu de pluies</li>
+              <li>Ciel dégagé</li>
+              <li>Mer calme au sud</li>
+            </ul>
+            <p style="margin-top: 12px;"><strong>Évitez:</strong> Septembre-octobre (mousson), mai-août (très chaud/humide).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Combien de jours minimum pour un séjour en Thaïlande ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Nos recommandations:</p>
+            <ul>
+              <li><strong>5-7 jours:</strong> Une région (Bangkok + Chiang Mai OU Phuket)</li>
+              <li><strong>10-12 jours:</strong> 2 régions (Bangkok + plages)</li>
+              <li><strong>14+ jours:</strong> Expérience complète (cités + plages + nature)</li>
+            </ul>
+            <p style="margin-top: 12px;">Plus court est possible mais moins approfondi.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Les activités sont-elles adaptées aux enfants ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Absolument !</strong> Nous proposons:</p>
+            <ul>
+              <li>Activités adaptées à tous les âges</li>
+              <li>Rythme ajusté aux enfants</li>
+              <li>Sécurité maximale prioritaire</li>
+              <li>Guide engageant et patient</li>
+            </ul>
+            <p style="margin-top: 12px;">Informez-nous de l'âge des enfants pour une meilleure organisation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quelles sont les activités à faire en Thaïlande ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <ul>
+              <li>Visites temples et sites culturels</li>
+              <li>Plongée et snorkeling</li>
+              <li>Trekking jungle et nature</li>
+              <li>Cours cuisine thaïlandaise</li>
+              <li>Spa et massages traditionnels</li>
+              <li>Marchés flottants</li>
+              <li>Excursions en bateau</li>
+              <li>Rencontres éléphants (responsable)</li>
+              <li>Vie nocturne et divertissement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISA & DOCUMENTS -->
+      <div class="faq-category">
+        <h2>📜 Visa & Documents</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Ai-je besoin d'un visa pour la Thaïlande ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Cela dépend de votre nationalité:</p>
+            <ul>
+              <li><strong>Citoyens UE:</strong> NON requis jusqu'à 30 jours (exempt de visa)</li>
+              <li><strong>Autres pays:</strong> Contactez votre ambassade</li>
+            </ul>
+            <p style="margin-top: 12px;"><strong>Documents requis:</strong> Passeport valide 6+ mois, billet retour, preuves financières.</p>
+            <p><strong>💡 Conseil:</strong> Nous proposons une assistance visa gratuite si besoin.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Mon passeport expire bientôt, est-ce un problème ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>OUI, c'est important !</strong> Votre passeport doit être:</p>
+            <ul>
+              <li>Valide au minimum <strong>6 mois après</strong> votre date de retour</li>
+              <li>En bon état (sans dommage)</li>
+              <li>Avec pages vierges disponibles</li>
+            </ul>
+            <p style="margin-top: 12px;">Renouvelez votre passeport avant si nécessaire (délai 2-4 semaines selon pays).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quelle assurance voyage recommandez-vous ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Nous recommandons une assurance couvrant:</p>
+            <ul>
+              <li>Annulation voyage</li>
+              <li>Frais médicaux (200,000€+ minimum)</li>
+              <li>Évacuation sanitaire</li>
+              <li>Bagages et retard</li>
+              <li>Responsabilité civile</li>
+            </ul>
+            <p style="margin-top: 12px;">Nous pouvons vous proposer des partenaires d'assurance fiables. Contactez-nous.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SANTÉ & SÉCURITÉ -->
+      <div class="faq-category">
+        <h2>🏥 Santé & Sécurité</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Y a-t-il des vaccins recommandés ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Vaccins recommandés (parlez à votre médecin):</p>
+            <ul>
+              <li>Fièvre jaune (pour entrée)</li>
+              <li>Hépatite A et B</li>
+              <li>Typhoïde</li>
+              <li>Tétanos/Diphtérie</li>
+            </ul>
+            <p style="margin-top: 12px;">Aucun n'est obligatoire mais recommandé pour 4+ semaines.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>La Thaïlande est-elle sûre pour les touristes ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>OUI, très sûre !</strong> La Thaïlande reçoit des millions de touristes annuels. Conseils:</p>
+            <ul>
+              <li>Éviter zones touristiques la nuit tard</li>
+              <li>Garder documents en lieu sûr</li>
+              <li>Respecter les coutumes locales</li>
+              <li>Nos guides connaissent tous les zones sûres</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>L'eau du robinet est-elle sûre à boire ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Non recommandé de boire directement. À la place:</p>
+            <ul>
+              <li>Boire eau en bouteille (partout disponible)</li>
+              <li>Glaçons des restaurants sont ok (eau filtrée)</li>
+              <li>Thé/café ok (eau bouillie)</li>
+            </ul>
+            <p style="margin-top: 12px;">Apportez bouteille réutilisable pour économiser.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CULTURE & ÉTIQUETTE -->
+      <div class="faq-category">
+        <h2>🙏 Culture & Étiquette</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Qu'y a-t-il à savoir sur la culture thaïlandaise ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Points importants:</p>
+            <ul>
+              <li><strong>Respect roi:</strong> Très important, ne critiquez jamais</li>
+              <li><strong>Temples:</strong> Tenue respectueuse, pas de chaussures</li>
+              <li><strong>Salutation:</strong> Wai (mains jointes) plutôt que poignée de main</li>
+              <li><strong>Pied:</strong> Ne jamais pointer/montrer du pied (offensant)</li>
+              <li><strong>Sourire:</strong> Thaïlandais sont accueillants et souriants</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Comment dit-on bonjour en thaï ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Sawasdee krap</strong> (hommes) / <strong>Sawasdee ka</strong> (femmes)</p>
+            <p style="margin-top: 12px;">Autres phrases utiles:</p>
+            <ul>
+              <li><strong>Khob khun:</strong> Merci</li>
+              <li><strong>Mai pen rai:</strong> De rien</li>
+              <li><strong>Chai:</strong> Oui</li>
+              <li><strong>Mai:</strong> Non</li>
+            </ul>
+            <p style="margin-top: 12px;">Nos guides vous enseigneront plus !</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGISTIQUE -->
+      <div class="faq-category">
+        <h2>✈️ Logistique</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>À quelle heure dois-je arriver à l'aéroport ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Recommandations standard:</p>
+            <ul>
+              <li><strong>Vol domestique:</strong> 1.5 heures avant</li>
+              <li><strong>Vol international:</strong> 2-3 heures avant</li>
+            </ul>
+            <p style="margin-top: 12px;">Nos transferts aéroport sont arrangés. Nous vous communiquerons l'heure de pickup à l'avance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Comment se déplacer en Thaïlande ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Options de transport:</p>
+            <ul>
+              <li><strong>Avion domestique:</strong> Bangkok-Phuket (1h30)</li>
+              <li><strong>Train:</strong> Réseau bien développé</li>
+              <li><strong>Bus:</strong> Confortable et pas cher</li>
+              <li><strong>Taxi/Tuk-tuk:</strong> Pour courts trajets</li>
+              <li><strong>Bateau:</strong> Entre îles</li>
+            </ul>
+            <p style="margin-top: 12px;"><strong>💡:</strong> Nous arrangeons tous les transports pour vous.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quel décalage horaire avec la France ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Thaïlande: UTC+7</strong></p>
+            <p style="margin-top: 12px; margin-bottom: 12px;">Décalage avec France:</p>
+            <ul>
+              <li><strong>Hiver (nov-mar):</strong> +6 heures (TH 12h = FR 6h)</li>
+              <li><strong>Été (mar-oct):</strong> +5 heures (TH 12h = FR 7h)</li>
+            </ul>
+            <p style="margin-top: 12px;">Accordez-vous 2-3 jours pour la décalage.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE CLIENT -->
+      <div class="faq-category">
+        <h2>💬 Service Client</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Comment puis-je vous contacter en urgence ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Urgence pendant voyage:</strong></p>
+            <ul>
+              <li><strong>WhatsApp:</strong> +84 32 751 6422 (réponse 5-15 min)</li>
+              <li><strong>Téléphone:</strong> Disponible sur demande</li>
+              <li><strong>Email:</strong> contact@thaiparadise.com</li>
+            </ul>
+            <p style="margin-top: 12px;">24/7 support en français garanti.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Puis-je modifier mon séjour après réservation ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p><strong>Oui !</strong> Modifications possibles jusqu'à <strong>3 jours avant</strong> (sous conditions):</p>
+            <ul>
+              <li>Changement dates (si disponibilité)</li>
+              <li>Ajout/retrait activités</li>
+              <li>Changement hébergement (même catégorie)</li>
+            </ul>
+            <p style="margin-top: 12px;">Frais possibles selon nature modification. Contactez-nous rapidement.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Qui contacte-t-on pour plus d'informations ?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Plusieurs options:</p>
+            <ul>
+              <li><strong>Formulaire contact:</strong> <a href="contact.html" style="color: #00ff00;">Contact page</a></li>
+              <li><strong>WhatsApp direct:</strong> +84 32 751 6422</li>
+              <li><strong>Email:</strong> contact@thaiparadise.com</li>
+              <li><strong>Chat page d'accueil:</strong> Widget WhatsApp</li>
+            </ul>
+            <p style="margin-top: 12px;">Réponse garantie dans les 2 heures.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script>
+    // FAQ Accordion Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+          // Fermer les autres items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle l'item actuel
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

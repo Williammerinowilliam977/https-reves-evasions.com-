@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Séjours Personnalisés – Thaïlande Rêves & Évasions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: url('images/fond-principal.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(128, 0, 0, 0.85);
+      padding: 20px 0;
+      border-bottom: 3px solid gold;
+      position: relative;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .language-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .language-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .language-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    header img {
+      width: 220px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #8B0000;
+      border-top: 2px solid gold;
+      border-bottom: 2px solid gold;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #fff;
+      margin-bottom: 25px;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      margin: 0 auto;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .form-section {
+      background: rgba(139, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      margin-bottom: 30px;
+    }
+
+    .form-section h2 {
+      color: gold;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: gold;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid gold;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      font-size: 1em;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="tel"]::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    select option {
+      background: #8B0000;
+      color: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 10px;
+      cursor: pointer;
+      width: auto;
+      border: none;
+      padding: 0;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    button {
+      background: #008000;
+      color: gold;
+      border: 2px solid gold;
+      padding: 15px 40px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: gold;
+      color: #008000;
+    }
+
+    button.secondary {
+      background: #8B0000;
+    }
+
+    button.secondary:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    footer {
+      background: #8B0000;
+      color: gold;
+      text-align: center;
+      padding: 12px 20px;
+      border-top: 2px solid gold;
+      font-size: 0.85em;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.9em;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .success-message {
+      display: none;
+      background: #008000;
+      color: gold;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 2px solid gold;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .form-section {
+        padding: 20px;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>🌟 Vos Séjours Personnalisés</h1>
+    <p>Créez votre expérience unique en Thaïlande selon vos envies et préférences</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="success-message" id="successMessage">
+      ✓ Merci ! Votre demande de séjour personnalisé a été envoyée avec succès. Nous vous contacterons bientôt.
+    </div>
+
+    <form id="customTripForm">
+      <!-- INFORMATIONS PERSONNELLES -->
+      <div class="form-section">
+        <h2>📋 Vos Informations</h2>
+        
+        <div class="form-group">
+          <label for="nom">Nom complet *</label>
+          <input type="text" id="nom" name="nom" placeholder="Ex: Jean Dupont" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="Ex: jean@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone / WhatsApp *</label>
+          <input type="tel" id="telephone" name="telephone" placeholder="Ex: +33 6 12 34 56 78" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nationalite">Nationalité</label>
+          <input type="text" id="nationalite" name="nationalite" placeholder="Ex: France">
+        </div>
+      </div>
+
+      <!-- DATES ET DURÉE -->
+      <div class="form-section">
+        <h2>📅 Dates et Durée</h2>
+        
+        <div class="form-group">
+          <label for="dateArrivee">Date d'arrivée souhaitée *</label>
+          <input type="date" id="dateArrivee" name="dateArrivee" required>
+        </div>
+
+        <div class="form-group">
+          <label for="duree">Durée du séjour (en jours) *</label>
+          <input type="number" id="duree" name="duree" min="1" max="60" placeholder="Ex: 7" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nombrePersonnes">Nombre de personnes *</label>
+          <input type="number" id="nombrePersonnes" name="nombrePersonnes" min="1" max="20" value="1" required>
+        </div>
+      </div>
+
+      <!-- DESTINATIONS -->
+      <div class="form-section">
+        <h2>🗺️ Destinations Intéressées</h2>
+        
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="destination" value="Bangkok">
+            Bangkok (La ville cosmopolite)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Chiang-Mai">
+            Chiang Mai (La culture et les temples)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Phuket">
+            Phuket (Les plages et la mer)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Pattaya">
+            Pattaya (Les activités nautiques)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Iles-Phi-Phi">
+            Îles Phi Phi (Paradis tropical)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Krabi">
+            Krabi (Les falaises calcaires)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Samui">
+            Koh Samui (Île paradisiaque)
+          </label>
+          <label>
+            <input type="checkbox" name="destination" value="Autre">
+            Autre région (à préciser)
+          </label>
+        </div>
+      </div>
+
+      <!-- INTÉRÊTS ET ACTIVITÉS -->
+      <div class="form-section">
+        <h2>🎯 Vos Intérêts et Activités</h2>
+        
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="interet" value="Temple-et-culture">
+            Temples et culture
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Plages-et-detente">
+            Plages et détente
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Activites-nautiques">
+            Activités nautiques (plongée, snorkeling, etc.)
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Trekking-nature">
+            Trekking et nature
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Gastronomie">
+            Gastronomie et cours de cuisine
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Spa-bien-etre">
+            Spa et bien-être
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Sports-aventure">
+            Sports et aventure
+          </label>
+          <label>
+            <input type="checkbox" name="interet" value="Vie-nocturne">
+            Vie nocturne et divertissement
+          </label>
+        </div>
+      </div>
+
+      <!-- BUDGET ET HÉBERGEMENT -->
+      <div class="form-section">
+        <h2>💰 Budget et Hébergement</h2>
+        
+        <div class="form-group">
+          <label for="budget">Budget quotidien par personne *</label>
+          <select id="budget" name="budget" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="budget-low">Économique (moins de 50€/jour)</option>
+            <option value="budget-mid">Moyen (50-150€/jour)</option>
+            <option value="budget-high">Confortable (150-300€/jour)</option>
+            <option value="budget-luxury">Luxe (plus de 300€/jour)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hebergement">Type d'hébergement préféré *</label>
+          <select id="hebergement" name="hebergement" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="guest-house">Guest House (backpacker)</option>
+            <option value="hotels-3-4">Hôtel 3-4 étoiles</option>
+            <option value="resort">Resort all-inclusive</option>
+            <option value="villa-prive">Villa privée</option>
+            <option value="luxury">Hôtel de luxe 5★</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- INFOS SPÉCIALES -->
+      <div class="form-section">
+        <h2>ℹ️ Informations Spéciales</h2>
+        
+        <div class="form-group">
+          <label for="commentaires">Demandes spéciales ou remarques</label>
+          <textarea id="commentaires" name="commentaires" placeholder="Ex: Régime alimentaire, restrictions, envies particulières..."></textarea>
+        </div>
+
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="services" value="Visa-assistance">
+            Assistance visa
+          </label>
+          <label>
+            <input type="checkbox" name="services" value="Guide-francais">
+            Guide français privé
+          </label>
+          <label>
+            <input type="checkbox" name="services" value="Transport-aeroport">
+            Transport aéroport
+          </label>
+          <label>
+            <input type="checkbox" name="services" value="Assurance-voyage">
+            Assurance voyage
+          </label>
+        </div>
+      </div>
+
+      <!-- BOUTONS -->
+      <div class="button-group">
+        <button type="submit">✓ Envoyer ma demande</button>
+        <button type="reset" class="secondary">↻ Réinitialiser le formulaire</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+
+  <script>
+    document.getElementById('customTripForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Afficher le message de succès
+      const successMessage = document.getElementById('successMessage');
+      successMessage.classList.add('show');
+      
+      // Optionnel: Envoyer les données (à adapter selon votre backend)
+      console.log('Formulaire soumis !');
+      
+      // Masquer le message après 5 secondes
+      setTimeout(function() {
+        successMessage.classList.remove('show');
+      }, 5000);
+      
+      // Réinitialiser le formulaire
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

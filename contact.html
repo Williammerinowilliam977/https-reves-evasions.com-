@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Thaïlande Rêves & Évasions pour poser vos questions ou demander un devis personnalisé pour votre séjour en Thaïlande.">
+  <meta name="keywords" content="contact, thaïlande, réservation, devis, excursion">
+  <title>Nous Contacter – Thaïlande Rêves & Évasions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: url('images/fond-principal.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(128, 0, 0, 0.85);
+      padding: 20px 0;
+      border-bottom: 3px solid gold;
+      position: relative;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .language-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .language-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .language-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    header img {
+      width: 220px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #8B0000;
+      border-top: 2px solid gold;
+      border-bottom: 2px solid gold;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 10px;
+      border: 2px solid gold;
+    }
+
+    .contact-info h2 {
+      color: gold;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
+
+    .info-item {
+      margin-bottom: 30px;
+      background: rgba(139, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid gold;
+    }
+
+    .info-item h3 {
+      color: gold;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .info-item p {
+      line-height: 1.6;
+      font-size: 1.05em;
+    }
+
+    .info-item a {
+      color: #00ff00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .info-item a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: #008000;
+      border: 2px solid gold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: gold;
+      text-decoration: none;
+      font-size: 1.5em;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background: gold;
+      color: #008000;
+    }
+
+    .contact-form {
+      background: rgba(139, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid gold;
+    }
+
+    .contact-form h2 {
+      color: gold;
+      font-size: 1.8em;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: gold;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid gold;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      font-size: 1em;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    select option {
+      background: #8B0000;
+      color: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    button {
+      flex: 1;
+      background: #008000;
+      color: gold;
+      border: 2px solid gold;
+      padding: 15px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: gold;
+      color: #008000;
+      transform: translateY(-2px);
+    }
+
+    button.reset {
+      background: #8B0000;
+    }
+
+    button.reset:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .response-message {
+      display: none;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 2px solid gold;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .response-message.success {
+      background: rgba(0, 128, 0, 0.7);
+      color: #00ff00;
+      display: block;
+    }
+
+    .response-message.error {
+      background: rgba(255, 0, 0, 0.7);
+      color: #ff0000;
+      display: block;
+    }
+
+    .response-message.show {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background: #8B0000;
+      color: gold;
+      text-align: center;
+      padding: 12px 20px;
+      border-top: 2px solid gold;
+      font-size: 0.85em;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.9em;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .map-container {
+      margin-top: 40px;
+      background: rgba(139, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid gold;
+    }
+
+    .map-container h3 {
+      color: gold;
+      margin-bottom: 15px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: 2px solid gold;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .contact-form,
+      .contact-info {
+        padding: 20px;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>📞 Contactez-Nous</h1>
+    <p>Nous sommes heureux de vous aider à planifier votre aventure en Thaïlande</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="contact-container">
+      
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-info">
+        <h2>✉️ Nos Coordonnées</h2>
+        
+        <div class="info-item">
+          <h3>📱 WhatsApp / Téléphone</h3>
+          <p><a href="https://wa.me/84327516422">+84 32 751 6422</a></p>
+          <p style="font-size: 0.9em; margin-top: 8px; color: #ccc;">Réponse rapide garantie 24h/24</p>
+        </div>
+
+        <div class="info-item">
+          <h3>✉️ Email</h3>
+          <p><a href="mailto:contact@thaiparadise.com">contact@thaiparadise.com</a></p>
+          <p style="font-size: 0.9em; margin-top: 8px; color: #ccc;">Nous répondons dans les 2 heures</p>
+        </div>
+
+        <div class="info-item">
+          <h3>🕐 Horaires</h3>
+          <p>Lun - Dim : 08:00 - 22:00 (heure Thaïlande UTC+7)</p>
+          <p style="font-size: 0.9em; margin-top: 8px; color: #ccc;">Support disponible même les weekends et jours fériés</p>
+        </div>
+
+        <div class="info-item">
+          <h3>📍 Localisation</h3>
+          <p>Basé à Dubaï, Émirats Arabes Unis<br>Antenne à Bangkok, Thaïlande</p>
+        </div>
+
+        <div class="info-item">
+          <h3>🌐 Suivez-Nous</h3>
+          <div class="social-links">
+            <a href="https://facebook.com" title="Facebook" style="font-size:24px;">f</a>
+            <a href="https://instagram.com" title="Instagram" style="font-size:20px;">📷</a>
+            <a href="https://wa.me/84327516422" title="WhatsApp" style="font-size:24px;">💬</a>
+            <a href="https://youtube.com" title="YouTube" style="font-size:20px;">📹</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form">
+        <h2>📝 Envoyez-Nous un Message</h2>
+        
+        <div class="response-message" id="responseMessage"></div>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+33 6 12 34 56 78">
+          </div>
+
+          <div class="form-group">
+            <label for="sujet">Sujet *</label>
+            <select id="sujet" name="sujet" required>
+              <option value="">-- Sélectionnez un sujet --</option>
+              <option value="devis">Demande de devis</option>
+              <option value="reservation">Réservation</option>
+              <option value="question">Question générale</option>
+              <option value="reclamation">Réclamation/Retour</option>
+              <option value="partenariat">Partenariat</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre demande en détail..." required></textarea>
+          </div>
+
+          <div class="button-group">
+            <button type="submit">✓ Envoyer le message</button>
+            <button type="reset" class="reset">↻ Réinitialiser</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAP SECTION -->
+    <div class="map-container">
+      <h3>📍 Localisation</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.1478369850166!2d100.5027!3d13.7563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299c3d26e3d01%3A0x80da88888888!2sBangkok%2C%20Thailand!5e0!3m2!1sfr!2sfr!4v1627000000000" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nom = document.getElementById('nom').value;
+      const email = document.getElementById('email').value;
+      const sujet = document.getElementById('sujet').value;
+      
+      if (!nom || !email || !sujet) {
+        showMessage('Veuillez remplir all les champs obligatoires', 'error');
+        return;
+      }
+      
+      // Simulate form submission
+      const messageDiv = document.getElementById('responseMessage');
+      showMessage('✓ Merci ! Votre message a été envoyé avec succès. Nous vous contacterons très bientôt.', 'success');
+      
+      // Reset form
+      this.reset();
+      
+      // Hide message after 5 seconds
+      setTimeout(() => {
+        messageDiv.classList.remove('show');
+      }, 5000);
+    });
+
+    function showMessage(text, type) {
+      const messageDiv = document.getElementById('responseMessage');
+      messageDiv.textContent = text;
+      messageDiv.className = `response-message ${type} show`;
+    }
+
+    // Smooth scroll and animations
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

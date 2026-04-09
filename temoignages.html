@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez les avis et témoignages des milliers de clients satisfaits ayant utilisé les services de Thaïlande Rêves & Évasions.">
+  <meta name="keywords" content="avis, témoignages, clients, agence voyage, thaïlande">
+  <title>Témoignages – Thaïlande Rêves & Évasions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: url('images/fond-principal.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(128, 0, 0, 0.85);
+      padding: 20px 0;
+      border-bottom: 3px solid gold;
+      position: relative;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .language-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .language-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .language-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    header img {
+      width: 220px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #8B0000;
+      border-top: 2px solid gold;
+      border-bottom: 2px solid gold;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-intro {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-intro h2 {
+      color: gold;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .rating-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .rating-box {
+      background: rgba(139, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid gold;
+      text-align: center;
+    }
+
+    .rating-big {
+      font-size: 2.5em;
+      color: gold;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .rating-label {
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: rgba(139, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    }
+
+    .stars {
+      color: #FFD700;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+
+    .testimonial-text {
+      font-size: 1.05em;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+      border-left: 3px solid gold;
+      padding-left: 15px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8B0000 0%, #FF6B6B 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      border: 2px solid gold;
+    }
+
+    .author-info h4 {
+      color: gold;
+      margin-bottom: 2px;
+    }
+
+    .author-info p {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .quote-mark {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 3em;
+      color: rgba(255, 215, 0, 0.2);
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background: rgba(139, 0, 0, 0.6);
+      color: gold;
+      border: 2px solid gold;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: gold;
+      color: #008000;
+    }
+
+    .cta-submit-testimonial {
+      background: rgba(0, 128, 0, 0.3);
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta-submit-testimonial h3 {
+      color: gold;
+      font-size: 1.5em;
+      margin-bottom: 15px;
+    }
+
+    .cta-submit-testimonial p {
+      margin-bottom: 15px;
+    }
+
+    .cta-submit-testimonial a {
+      display: inline-block;
+      background: #008000;
+      color: gold;
+      padding: 15px 40px;
+      border: 2px solid gold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+
+    .cta-submit-testimonial a:hover {
+      background: gold;
+      color: #008000;
+    }
+
+    footer {
+      background: #8B0000;
+      color: gold;
+      text-align: center;
+      padding: 12px 20px;
+      border-top: 2px solid gold;
+      font-size: 0.85em;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.9em;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .section-intro {
+        padding: 20px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>⭐ Témoignages & Avis</h1>
+    <p>Les histoires de nos clients satisfaits qui vous inspireront</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- INTRO SECTION -->
+    <section class="section-intro">
+      <h2>Ce Que Disent Nos Clients</h2>
+      <p style="margin-top: 15px;">Explorez les expériences inoubliables vécues par des milliers de voyageurs grâce à nos services</p>
+      <div class="rating-summary">
+        <div class="rating-box">
+          <div class="rating-big">4.9/5</div>
+          <div class="rating-label">Note moyenne</div>
+        </div>
+        <div class="rating-box">
+          <div class="rating-big">5000+</div>
+          <div class="rating-label">Avis positifs</div>
+        </div>
+        <div class="rating-box">
+          <div class="rating-big">98%</div>
+          <div class="rating-label">Satisfaction</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-buttons">
+      <button class="filter-btn active">Tous</button>
+      <button class="filter-btn">Famille</button>
+      <button class="filter-btn">Couple</button>
+      <button class="filter-btn">Solo</button>
+      <button class="filter-btn">Aventure</button>
+      <button class="filter-btn">Culture</button>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-grid">
+      
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Une expérience absolument extraordinaire ! L'équipe a vraiment compris ce que nous voulions. Bangkok était magique, les guides impeccables, et chaque moment était parfaitement organisé. Merci d'avoir rendu notre lune de miel inoubliable !
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩‍🤝‍👨</div>
+          <div class="author-info">
+            <h4>Marie & Thomas</h4>
+            <p>Couple • Juillet 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Nous avons voyagé en famille et c'était parfait pour nos trois enfants. Les activités étaient bien dosées, les pauses aux bons moments, et nos enfants ont adoré chaque instant. Meilleure décision de prendre cette agence !
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨‍👩‍👧‍👦</div>
+          <div class="author-info">
+            <h4>Pierre Dubois</h4>
+            <p>Famille • Juin 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Je suis parti seul en Thaïlande et j'avais peur de m'ennuyer. L'équipe m'a proposé des activités de groupe sans jamais forcer. J'ai rencontré des gens formidables et j'ai eu l'expérience de ma vie. Incroyable !
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🧑‍🦱</div>
+          <div class="author-info">
+            <h4>Lucas Martin</h4>
+            <p>Solo • Mai 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Les temples étaient spectaculaires, les traditions fascinantes. Notre guide Somchai connaît chaque pierre, chaque histoire. C'est pas juste du tourisme, c'est une véritable immersion culturelle. Merveilleux !
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👴</div>
+          <div class="author-info">
+            <h4>Jean Claude</h4>
+            <p>Culture • Avril 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Plongée en apnée aux Îles Phi Phi, trekking, tyrolienne... tout était époustouflant ! Les guides sont expérimentés et sécurité prioritaire. Pour les aventuriers, c'est LE choix ! Déjà impatient de revenir.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🧗</div>
+          <div class="author-info">
+            <h4>Antoine</h4>
+            <p>Aventure • Mars 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Leurs prix sont honnêtes, ce qu'on voit c'est ce qu'on paie. Pas de surprise, pas de frais cachés. L'équipe répond rapidement, organise tout sans tracas. Le seul regret : trop court ! Je reviens l'année prochaine !
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨‍💼</div>
+          <div class="author-info">
+            <h4>François</h4>
+            <p>Solo • Février 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★☆</div>
+        <p class="testimonial-text">
+          Superbe séjour ! Peut-être un peu d'attente dans les restaurants, mais l'ambiance était géniale. Les gens d'ici sont tellement accueillants. Merci pour cette belle expérience, je recommande vivement !
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div class="author-info">
+            <h4>Isabelle</h4>
+            <p>Couple • Janvier 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Cours de cuisine thaïlandaise authentique, massage traditionnel, marché flottant... chaque jour une nouvelle merveille ! C'est tellement bien pensé. Je sens que j'ai vraiment découvert la vraie Thaïlande, pas du tourisme de masse.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩‍🍳</div>
+          <div class="author-info">
+            <h4>Céline</h4>
+            <p>Famille • Décembre 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          Mon premier voyage en Asie, j'étais stressée. L'équipe a été tellement rassurante et attentionnée. Aucune mauvaise surprise, tout était doux et magique. Merci pour cette belle renaissance ! Je reviens définitivement.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👱‍♀️</div>
+          <div class="author-info">
+            <h4>Sarah</h4>
+            <p>Solo • Novembre 2024</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <div class="cta-submit-testimonial">
+      <h3>Vous Aussi, Partagez Votre Expérience !</h3>
+      <p>Avez-vous vécu une aventure inoubliable avec nous ? Partagez votre témoignage !</p>
+      <a href="contact.html">✉️ Envoyer votre témoignage</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+</body>
+</html>

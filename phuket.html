@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phuket – Thaïlande – Rêves & Évasions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="content">
+    <h2>Phuket - Joyau de la Mer d'Andaman</h2>
+    <p>Phuket est la plus grande île de Thaïlande, célèbre pour ses plages de sable blanc, ses eaux cristallines et sa vie nocturne animée. C'est un paradis tropical parfait pour les vacances balnéaires.</p>
+
+    <h3 style="color: gold; margin-top: 30px;">Points d'Intérêt</h3>
+    <p>
+      <strong>Patong Beach :</strong> La plage la plus populaire avec restaurants et bars directement sur le sable.<br>
+      <strong>Big Buddha :</strong> Une statue imposante offrant une vue spectaculaire sur l'île.<br>
+      <strong>Phang Nga Bay :</strong> Une nature sauvage avec des falaises de calcaire et des grottes marines.<br>
+      <strong>Îles Andaman :</strong> Parfaites pour la plongée sous-marine et le snorkeling.
+    </p>
+
+    <div class="gallery">
+      <img src="images/phuket1.jpg" alt="Patong Beach" onerror="this.src='https://via.placeholder.com/300x250?text=Patong+Beach'">
+      <img src="images/phuket2.jpg" alt="Big Buddha" onerror="this.src='https://via.placeholder.com/300x250?text=Big+Buddha'">
+      <img src="images/phuket3.jpg" alt="Phang Nga" onerror="this.src='https://via.placeholder.com/300x250?text=Phang+Nga'">
+    </div>
+
+    <p><strong>Meilleure saison :</strong> Novembre à avril (mer calme)</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

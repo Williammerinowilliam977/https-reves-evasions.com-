@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nager avec les Dauphins – Pattaya – Thaïlande – Rêves & Évasions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .image-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .image-section img {
+      max-width: 100%;
+      height: auto;
+      max-height: 500px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ACTIVITY SECTION */
+    .activity-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.postimg.cc/zB05R2dr/Spectacle_de_dauphin_Pattaya.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 40px;
+      margin: 40px 0;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .activity-section h2 {
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    .activity-table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .activity-table th,
+    .activity-table td {
+      border: 1px solid gold;
+      padding: 12px;
+      color: #fff;
+      font-size: 0.95em;
+    }
+
+    .activity-table th {
+      background: #8B0000;
+      color: gold;
+      font-weight: bold;
+    }
+
+    .activity-table td {
+      background: rgba(139, 0, 0, 0.2);
+    }
+
+    .activity-plan {
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .activity-plan img {
+      max-width: 600px;
+      border: 3px solid gold;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    .breadcrumb {
+      padding: 15px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 2px solid gold;
+      text-align: left;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .breadcrumb a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 25px;
+      background: #8B0000;
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background: gold;
+      color: #008000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">Accueil</a> / <a href="pattaya.html">Pattaya</a> / Nager avec les Dauphins
+  </div>
+
+  <div class="main-content">
+    <a href="pattaya.html" class="back-button">← Retour à Pattaya</a>
+
+    <!-- ACTIVITY SECTION - NAGER AVEC LES DAUPHINS -->
+    <section class="activity-section">
+      <h2>🐬 Nager avec les Dauphins – Pattaya</h2>
+      <p>Une expérience magique et inoubliable ! Les tarifs incluent 20% de frais d'organisation.</p>
+      
+      <table class="activity-table">
+        <thead>
+          <tr>
+            <th>Section</th>
+            <th>Adulte</th>
+            <th>Enfant (80-120 cm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>VIP A</td><td data-price-thb="1440">฿1,440</td><td data-price-thb="1080">฿1,080</td></tr>
+          <tr><td>VIP B</td><td data-price-thb="1440">฿1,440</td><td data-price-thb="1080">฿1,080</td></tr>
+          <tr><td>VIP C</td><td data-price-thb="1440">฿1,440</td><td data-price-thb="1080">฿1,080</td></tr>
+          <tr><td>A1</td><td data-price-thb="840">฿840</td><td data-price-thb="600">฿600</td></tr>
+          <tr><td>A2</td><td data-price-thb="840">฿840</td><td data-price-thb="600">฿600</td></tr>
+          <tr><td>B</td><td data-price-thb="1080">฿1,080</td><td data-price-thb="840">฿840</td></tr>
+          <tr><td>C1</td><td data-price-thb="840">฿840</td><td data-price-thb="600">฿600</td></tr>
+          <tr><td>C2</td><td data-price-thb="840">฿840</td><td data-price-thb="600">฿600</td></tr>
+        </tbody>
+      </table>
+
+      <div class="activity-plan">
+        <h3 style="color: gold;">Plan des Sections</h3>
+        <img src="https://i.postimg.cc/zGkSBL7D/109342.png" alt="Plan des sections dauphins Pattaya" onerror="this.src='images/fond-principal.jpg'">
+      </div>
+
+      <a href="booking.html" class="btn" style="display: inline-block; margin-top: 20px; background: #008000; color: gold; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; border: 2px solid gold; transition: 0.3s;">Réserver cette Activité</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

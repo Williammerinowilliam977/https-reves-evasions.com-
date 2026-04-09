@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Îles Phi Phi – Thaïlande – Rêves & Évasions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: url('images/phi-phi-island.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="content">
+    <h2>Îles Phi Phi - Le Paradis Tropical</h2>
+    <p>Les Îles Phi Phi sont un archipel paradisiaque composé de petites îles aux paysages à couper le souffle. Avec leurs plages immaculées, leurs eaux turquoise et leur vie marine exceptionnelle, c'est la destination rêvée pour les amoureux de nature intacte.</p>
+
+    <h3 style="color: gold; margin-top: 30px;">Points d'Intérêt</h3>
+    <p>
+      <strong>Phi Phi Don :</strong> L'île principale avec restaurants et hébergements de luxe.<br>
+      <strong>Maya Beach :</strong> La fameuse plage du film "La Plage", entourée de falaises spectaculaires.<br>
+      <strong>Phi Phi Leh :</strong> Réserve marine avec des spots de plongée exceptionnels.<br>
+      <strong>Lagon bleu :</strong> Un lagon aux eaux surréalistes idéal pour prendre des photos.
+    </p>
+
+    <div class="gallery">
+      <img src="images/phiphi1.jpg" alt="Phi Phi Don" onerror="this.src='https://via.placeholder.com/300x250?text=Phi+Phi+Don'">
+      <img src="images/phiphi2.jpg" alt="Maya Beach" onerror="this.src='https://via.placeholder.com/300x250?text=Maya+Beach'">
+      <img src="images/phiphi3.jpg" alt="Lagon bleu" onerror="this.src='https://via.placeholder.com/300x250?text=Lagon+Bleu'">
+    </div>
+
+    <p><strong>Meilleure saison :</strong> Novembre à avril (mer calme, ciel dégagé)</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="#">Contact</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

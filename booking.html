@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Système de Booking Personnalisé - Réservez votre séjour unique en Thaïlande avec Thaïlande Rêves & Évasions.">
+  <meta name="keywords" content="booking, réservation, Thaïlande, séjour, système réservation">
+  <title>Booking Personnalisé – Thaïlande Rêves & Évasions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: url('images/fond-principal.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(128, 0, 0, 0.85);
+      padding: 20px 0;
+      border-bottom: 3px solid gold;
+      position: relative;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .language-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .language-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .language-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    header img {
+      width: 220px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #8B0000;
+      border-top: 2px solid gold;
+      border-bottom: 2px solid gold;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.8em;
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .booking-container {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 30px;
+    }
+
+    .booking-form {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 10px;
+      border: 2px solid gold;
+    }
+
+    .booking-form h2 {
+      color: gold;
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 2px solid gold;
+    }
+
+    .form-section {
+      background: rgba(139, 0, 0, 0.4);
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      border-left: 4px solid gold;
+    }
+
+    .form-section h3 {
+      color: gold;
+      font-size: 1.3em;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: gold;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid gold;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-family: 'Georgia', serif;
+      font-size: 1em;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    select option {
+      background: #8B0000;
+      color: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      cursor: pointer;
+      color: #f0f0f0;
+      font-weight: normal;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 10px;
+      cursor: pointer;
+      width: auto;
+      border: none;
+      padding: 0;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    button {
+      flex: 1;
+      background: #008000;
+      color: gold;
+      border: 2px solid gold;
+      padding: 15px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+      font-family: 'Georgia', serif;
+    }
+
+    button:hover {
+      background: gold;
+      color: #008000;
+      transform: translateY(-2px);
+    }
+
+    button.secondary {
+      background: #8B0000;
+    }
+
+    button.secondary:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    /* SIDEBAR */
+    .booking-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .sidebar-card {
+      background: rgba(139, 0, 0, 0.6);
+      padding: 25px;
+      border-radius: 10px;
+      border: 2px solid gold;
+    }
+
+    .sidebar-card h3 {
+      color: gold;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+      padding-bottom: 10px;
+      border-bottom: 2px solid gold;
+    }
+
+    .price-summary {
+      background: rgba(0, 128, 0, 0.2);
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.95em;
+    }
+
+    .price-row strong {
+      color: gold;
+    }
+
+    .price-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 128, 0, 0.4);
+      padding: 12px;
+      border-radius: 5px;
+      margin-top: 15px;
+      border: 2px solid gold;
+    }
+
+    .price-total .amount {
+      font-size: 1.3em;
+      color: #00ff00;
+      font-weight: bold;
+    }
+
+    .contact-info {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      font-size: 0.9em;
+    }
+
+    .contact-info a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .success-message {
+      display: none;
+      background: rgba(0, 128, 0, 0.7);
+      color: #00ff00;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 2px solid #00ff00;
+      animation: slideDown 0.3s ease;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background: #8B0000;
+      color: gold;
+      text-align: center;
+      padding: 12px 20px;
+      border-top: 2px solid gold;
+      font-size: 0.85em;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.9em;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 968px) {
+      .booking-container {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .button-group {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <img src="images/logo-reves-evasions.jpg" alt="Thaïlande Rêves & Évasions">
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>🎫 Système de Booking Personnalisé</h1>
+    <p>Réservez votre séjour de rêve en Thaïlande en quelques clics</p>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="booking-container">
+      
+      <!-- BOOKING FORM -->
+      <div class="booking-form">
+        <h2>✈️ Votre Réservation</h2>
+        
+        <div class="success-message" id="successMessage">
+          ✓ Réservation confirmée ! Nous vous contacterons dans les 2 heures.
+        </div>
+
+        <form id="bookingForm">
+          
+          <!-- INFORMATIONS VOYAGEUR -->
+          <div class="form-section">
+            <h3>👤 Informations du Voyageur</h3>
+            
+            <div class="form-group">
+              <label for="prenom">Prénom *</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Ex: Jean" required>
+            </div>
+
+            <div class="form-group">
+              <label for="nom">Nom *</label>
+              <input type="text" id="nom" name="nom" placeholder="Ex: Dupont" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="jean.dupont@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone *</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="+33 6 12 34 56 78" required>
+            </div>
+
+            <div class="form-group">
+              <label for="paysprovenance">Pays de Provenance *</label>
+              <select id="paysprovenance" name="paysprovenance" required>
+                <option value="">-- Sélectionnez --</option>
+                <option value="Dubaï">🇦🇪 Dubaï (Émirats)</option>
+                <option value="France">🇫🇷 France</option>
+                <option value="Belgique">🇧🇪 Belgique</option>
+                <option value="Suisse">🇨🇭 Suisse</option>
+                <option value="Canada">🇨🇦 Canada</option>
+                <option value="Maroc">🇲🇦 Maroc</option>
+                <option value="Luxembourg">🇱🇺 Luxembourg</option>
+                <option value="Autre">🌍 Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DATES & DURÉE -->
+          <div class="form-section">
+            <h3>📅 Dates et Durée</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="datedepart">Date de Départ *</label>
+                <input type="date" id="datedepart" name="datedepart" required onchange="calculatePrice()">
+              </div>
+              <div class="form-group">
+                <label for="nombrejours">Nombre de Jours *</label>
+                <input type="number" id="nombrejours" name="nombrejours" min="3" max="60" placeholder="Ex: 7" required onchange="calculatePrice()">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nombrePersonnes">Nombre de Personnes *</label>
+              <input type="number" id="nombrePersonnes" name="nombrePersonnes" min="1" max="20" value="1" required onchange="calculatePrice()">
+            </div>
+          </div>
+
+          <!-- DESTINATIONS -->
+          <div class="form-section">
+            <h3>🗺️ Destinations</h3>
+            
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" name="destination" value="Bangkok" onchange="calculatePrice()">
+                🏙️ Bangkok (La capitale cosmopolite)
+              </label>
+              <label>
+                <input type="checkbox" name="destination" value="Chiang-Mai" onchange="calculatePrice()">
+                🏯 Chiang Mai (Culture et temples)
+              </label>
+              <label>
+                <input type="checkbox" name="destination" value="Phuket" onchange="calculatePrice()">
+                🏖️ Phuket (Plages paradisiaques)
+              </label>
+              <label>
+                <input type="checkbox" name="destination" value="Pattaya" onchange="calculatePrice()">
+                🌊 Pattaya (Activités nautiques)
+              </label>
+              <label>
+                <input type="checkbox" name="destination" value="Iles-Phi-Phi" onchange="calculatePrice()">
+                ⛱️ Îles Phi Phi (Îles paradisiaques)
+              </label>
+              <label>
+                <input type="checkbox" name="destination" value="Krabi" onchange="calculatePrice()">
+                🏔️ Krabi (Falaises calcaires)
+              </label>
+            </div>
+          </div>
+
+          <!-- HÉBERGEMENT -->
+          <div class="form-section">
+            <h3>🏨 Type d'Hébergement</h3>
+            
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="hebergement" value="economique" checked onchange="calculatePrice()">
+                💰 Économique (40-80€/nuit)
+              </label>
+              <label>
+                <input type="radio" name="hebergement" value="moyen" onchange="calculatePrice()">
+                🏠 Moyen (80-150€/nuit)
+              </label>
+              <label>
+                <input type="radio" name="hebergement" value="confortable" onchange="calculatePrice()">
+                🏖️ Confortable (150-250€/nuit)
+              </label>
+              <label>
+                <input type="radio" name="hebergement" value="luxe" onchange="calculatePrice()">
+                👑 Luxe (250€+/nuit)
+              </label>
+            </div>
+          </div>
+
+          <!-- ACTIVITÉS -->
+          <div class="form-section">
+            <h3>🎯 Activités Incluses</h3>
+            
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" name="activites" value="visite-temples" checked>
+                🏛️ Visite temples/sites culturels
+              </label>
+              <label>
+                <input type="checkbox" name="activites" value="plongee">
+                🤿 Plongée et snorkeling
+              </label>
+              <label>
+                <input type="checkbox" name="activites" value="trekking">
+                🥾 Trekking jungle
+              </label>
+              <label>
+                <input type="checkbox" name="activites" value="cuisine">
+                👨‍🍳 Cours de cuisine thaïe
+              </label>
+              <label>
+                <input type="checkbox" name="activites" value="spa">
+                 💆 Spa et massage trad.
+              </label>
+              <label>
+                <input type="checkbox" name="activites" value="marche">
+                🛒 Marchés flottants
+              </label>
+            </div>
+          </div>
+
+          <!-- REPAS -->
+          <div class="form-section">
+            <h3>🍽️ Repas</h3>
+            
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="repas" value="petit-dejeuner" checked onchange="calculatePrice()">
+                🥐 Petit-déjeuner inclus
+              </label>
+              <label>
+                <input type="radio" name="repas" value="demi-pension" onchange="calculatePrice()">
+                🍲 Demi-pension (petit-déj + dîner)
+              </label>
+              <label>
+                <input type="radio" name="repas" value="pension-complete" onchange="calculatePrice()">
+                🍽️ Pension complète (tous repas)
+              </label>
+              <label>
+                <input type="radio" name="repas" value="aucun" onchange="calculatePrice()">
+                ❌ Aucun repas
+              </label>
+            </div>
+          </div>
+
+          <!-- SERVICES SUPPLÉMENTAIRES -->
+          <div class="form-section">
+            <h3>📦 Services Supplémentaires</h3>
+            
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" name="services" value="guide-francais">
+                👤 Guide français privé (+50€/jour)
+              </label>
+              <label>
+                <input type="checkbox" name="services" value="transfert-aeroport">
+                🚗 Transfert aéroport (+30€)
+              </label>
+              <label>
+                <input type="checkbox" name="services" value="assurance">
+                📋 Assurance voyage (+2%)
+              </label>
+              <label>
+                <input type="checkbox" name="services" value="visa">
+                📜 Assistance visa (+50€)
+              </label>
+            </div>
+          </div>
+
+          <!-- DEMANDES SPÉCIALES -->
+          <div class="form-section">
+            <h3>💬 Demandes Spéciales</h3>
+            
+            <div class="form-group">
+              <label for="commentaires">Remarques ou demandes particulières</label>
+              <textarea id="commentaires" name="commentaires" placeholder="Ex: Allergies alimentaires, conditions physiques, envies particulières..."></textarea>
+            </div>
+          </div>
+
+          <!-- BOUTONS -->
+          <div class="button-group">
+            <button type="submit">✓ Confirmer la Réservation</button>
+            <button type="reset" class="secondary">↻ Effacer le Formulaire</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="booking-sidebar">
+        
+        <!-- RÉSUMÉ DU PRIX -->
+        <div class="sidebar-card">
+          <h3>💰 Résumé du Prix</h3>
+          
+          <div class="price-summary">
+            <div class="price-row">
+              <span>Nuit(s):</span>
+              <strong id="nbNuits">0</strong>
+            </div>
+            <div class="price-row">
+              <span>Personnes:</span>
+              <strong id="nbPersons">1</strong>
+            </div>
+            <div class="price-row">
+              <span>Destinations:</span>
+              <strong id="nbDestinations">0</strong>
+            </div>
+          </div>
+
+          <div class="price-row" style="font-size: 0.9em;">
+            <span>Prix/Nuit/Pers.:</span>
+            <strong id="prixNuit">60€</strong>
+          </div>
+
+          <div class="price-total">
+            <span>TOTAL:</span>
+            <div class="amount" id="totalPrice">0€</div>
+          </div>
+
+          <p style="margin-top: 15px; font-size: 0.85em; color: #ccc; text-align: center;">
+            *À titre informatif. Devis précis après confirmation.
+          </p>
+        </div>
+
+        <!-- INFORMATIONS DE CONTACT -->
+        <div class="sidebar-card">
+          <h3>📞 Contactez-Nous</h3>
+          
+          <div class="contact-info">
+            <p>
+              <strong>WhatsApp/Téléphone:</strong><br>
+              <a href="https://wa.me/84327516422">+84 32 751 6422</a>
+            </p>
+            <p>
+              <strong>Email:</strong><br>
+              <a href="mailto:contact@thaiparadise.com">contact@thaiparadise.com</a>
+            </p>
+            <p>
+              <strong>Réponse dans:</strong><br>
+              2 heures garanties ✓
+            </p>
+          </div>
+        </div>
+
+        <!-- AVANTAGES -->
+        <div class="sidebar-card">
+          <h3>✨ Avantages</h3>
+          
+          <div style="font-size: 0.9em; line-height: 1.8;">
+            ✓ Meilleur prix garanti<br>
+            ✓ Annulation gratuite 7j<br>
+            ✓ Support 24/7<br>
+            ✓ Pas de frais cachés<br>
+            ✓ Paiement sécurisé<br>
+            ✓ 98% satisfaits<br>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <script>
+    // Prix de base par nuit selon le type d'hébergement
+    const prixBase = {
+      'economique': 60,
+      'moyen': 120,
+      'confortable': 200,
+      'luxe': 350
+    };
+
+    // Services supplémentaires
+    const prixServices = {
+      'guide-francais': 50, // par jour
+      'transfert-aeroport': 30,
+      'assurance': 0, // pourcentage
+      'visa': 50
+    };
+
+    function calculatePrice() {
+      // Récupérer les valeurs
+      const nombreJours = parseInt(document.getElementById('nombrejours').value) || 0;
+      const nombrePersonnes = parseInt(document.getElementById('nombrePersonnes').value) || 1;
+      const hebergement = document.querySelector('input[name="hebergement"]:checked').value;
+      const destinations = document.querySelectorAll('input[name="destination"]:checked').length;
+      
+      // Maj sidebar info
+      document.getElementById('nbNuits').textContent = nombreJours;
+      document.getElementById('nbPersons').textContent = nombrePersonnes;
+      document.getElementById('nbDestinations').textContent = destinations;
+      document.getElementById('prixNuit').textContent = prixBase[hebergement] + '€';
+
+      // Calculer prix base
+      let priceBase = (prixBase[hebergement] * nombreJours * nombrePersonnes);
+
+      // Prix des attractions (destinations)
+      const prixDestinations = destinations * 50; // 50€ par destination
+      let totalAttrations = prixDestinations * nombreJours;
+
+      // Services
+      const guideChecked = document.querySelector('input[name="services"][value="guide-francais"]:checked');
+      let guidePrice = guideChecked ? (49 * nombreJours) : 0;
+
+      const transfertChecked = document.querySelector('input[name="services"][value="transfert-aeroport"]:checked');
+      let transfertPrice = transfertChecked ? 30 : 0;
+
+      const assuranceChecked = document.querySelector('input[name="services"][value="assurance"]:checked');
+      let assurancePrice = assuranceChecked ? (priceBase * 0.02) : 0;
+
+      const visaChecked = document.querySelector('input[name="services"][value="visa"]:checked');
+      let visaPrice = visaChecked ? 50 : 0;
+
+      // Total
+      let total = priceBase + totalAttrations + guidePrice + transfertPrice + assurancePrice + visaPrice;
+
+      // Afficher le total
+      document.getElementById('totalPrice').textContent = Math.round(total) + '€';
+    }
+
+    // Formulaire soumis
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Validation
+      const prenom = document.getElementById('prenom').value;
+      const nom = document.getElementById('nom').value;
+      const email = document.getElementById('email').value;
+
+      if (!prenom || !nom || !email) {
+        alert('Veuillez remplir tous les champs obligatoires');
+        return;
+      }
+
+      // Afficher message de succès
+      const successMsg = document.getElementById('successMessage');
+      successMsg.classList.add('show');
+
+      // Préparer les données pour vrai envoi
+      console.log('Réservation reçue de:', prenom, nom, email);
+      
+      // Réinitialiser après 3 secondes
+      setTimeout(() => {
+        successMsg.classList.remove('show');
+        this.reset();
+        calculatePrice();
+      }, 3000);
+    });
+
+    // Calculer au chargement
+    window.addEventListener('load', calculatePrice);
+  </script>
+
+</body>
+</html>

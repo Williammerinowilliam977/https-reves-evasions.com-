@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thaïlande Rêves & Évasions - Agence spécialisée en voyages authentiques et experiences inoubliables en Thaïlande. Découvrez Bangkok, Chiang Mai, Phuket et bien plus.">
+  <meta name="keywords" content="Thaïlande, voyage, tourisme, Bangkok, Phuket, Chiang Mai, séjour personnalisé, guide touristique">
+  <meta name="author" content="Thaïlande Rêves & Évasions">
+  <title>Thaïlande – Rêves & Évasions | Voyages Authentiques</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: url('images/page-accueil.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      background: rgba(128, 0, 0, 0.85);
+      padding: 20px 0;
+      border-bottom: 3px solid gold;
+      position: relative;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .language-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+      margin-right: 5px;
+    }
+
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .language-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .language-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    .currency-selector {
+      position: absolute;
+      top: 15px;
+      right: 220px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      z-index: 200;
+    }
+
+    .currency-selector label {
+      color: gold;
+      font-weight: bold;
+      font-size: 0.9em;
+      margin-right: 5px;
+    }
+
+    .currency-selector select {
+      padding: 8px 12px;
+      background: rgba(255, 215, 0, 0.1);
+      color: gold;
+      border: 2px solid gold;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+      transition: 0.3s;
+      font-size: 0.95em;
+    }
+
+    .currency-selector select:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    .currency-selector select option {
+      background: #8B0000;
+      color: gold;
+    }
+
+    header img {
+      width: 220px;
+    }
+
+    header h1 {
+      margin-top: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #8B0000;
+      border-top: 2px solid gold;
+      border-bottom: 2px solid gold;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      color: gold;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: gold;
+      color: #8B0000;
+      transform: scale(1.05);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      animation: fadeInDown 0.8s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      color: gold;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      color: #f0f0f0;
+      margin-bottom: 30px;
+    }
+
+    .hero .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: 2px solid gold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+    }
+
+    .btn-primary {
+      background: #008000;
+      color: gold;
+    }
+
+    .btn-primary:hover {
+      background: gold;
+      color: #008000;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(0, 128, 0, 0.3);
+      color: gold;
+      border: 2px solid gold;
+    }
+
+    .btn-secondary:hover {
+      background: gold;
+      color: #8B0000;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      padding-bottom: 150px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .section h2 {
+      color: gold;
+      font-size: 2.2em;
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid gold;
+    }
+
+    .section p {
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    /* STATS SECTION */
+    .stats-container {
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 3px solid gold;
+      border-bottom: 3px solid gold;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-box {
+      text-align: center;
+      background: rgba(139, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 8px;
+      border: 2px solid gold;
+    }
+
+    .stat-number {
+      font-size: 2.5em;
+      color: #00ff00;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: #f0f0f0;
+      font-size: 1.1em;
+    }
+
+    /* DESTINATIONS SECTION */
+    .destinations-intro {
+      background: #008000;
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      margin-bottom: 40px;
+      text-align: center;
+      color: gold;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .destination-card {
+      background: rgba(139, 0, 0, 0.6);
+      border: 2px solid gold;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .destination-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+    }
+
+    .destination-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #8B0000 0%, #FF6B6B 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .destination-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .destination-card:hover .destination-image img {
+      transform: scale(1.1);
+    }
+
+    .destination-info h3 {
+      color: gold;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+
+    .destination-info p {
+      font-size: 1em;
+      margin-bottom: 15px;
+      color: #e0e0e0;
+    }
+
+    .destination-info a {
+      display: inline-block;
+      background: #008000;
+      color: gold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 2px solid gold;
+    }
+
+    .destination-info a:hover {
+      background: gold;
+      color: #008000;
+    }
+
+    /* FEATURES SECTION */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: rgba(0, 128, 0, 0.2);
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 4px solid gold;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      color: gold;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      border: 2px solid gold;
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .service-item {
+      background: rgba(139, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid gold;
+    }
+
+    .service-item h3 {
+      color: gold;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .service-item ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .service-item li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .service-item li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00ff00;
+      font-weight: bold;
+    }
+
+    /* CTA SECTION */
+    .cta-showcase {
+      background: linear-gradient(135deg, rgba(0, 128, 0, 0.3) 0%, rgba(139, 0, 0, 0.4) 100%);
+      padding: 50px 20px;
+      border-radius: 10px;
+      border: 2px solid gold;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cta-showcase h2 {
+      margin-bottom: 20px;
+    }
+
+    .cta-showcase p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-preview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .testimonial-mini {
+      background: rgba(139, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid gold;
+    }
+
+    .testimonial-mini .stars {
+      color: gold;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+
+    .testimonial-mini p {
+      font-style: italic;
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-mini .author {
+      font-weight: bold;
+      color: gold;
+      font-size: 0.9em;
+    }
+
+    footer {
+      background: #8B0000;
+      color: gold;
+      text-align: center;
+      padding: 12px 20px;
+      border-top: 2px solid gold;
+      font-size: 0.85em;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 50;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 0.9em;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 40px 20px;
+      }
+
+      .section h2 {
+        font-size: 1.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="currency-selector">
+      <label for="currencySelect">💱</label>
+      <select id="currencySelect" onchange="changeCurrency(this.value)">
+        <option value="THB">THB (฿)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="CAD">CAD (C$)</option>
+      </select>
+    </div>
+    <div class="language-selector">
+      <label for="langSelect">🌐</label>
+      <select id="langSelect" onchange="changeLanguage(this.value)">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="th">ไทย</option>
+      </select>
+    </div>
+    <h1>Thaïlande – Rêves & Évasions</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bangkok.html">Bangkok</a>
+    <a href="chiangmai.html">Chiang Mai</a>
+    <a href="phuket.html">Phuket</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="ilesphiphi.html">Îles Phi Phi</a>
+    <a href="booking.html">Booking</a>
+    <a href="apropos.html">À Propos</a>
+    <a href="temoignages.html">Avis</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>🌟 Bienvenue en Thaïlande</h1>
+    <p>Découvrez des expériences authentiques et inoubliables</p>
+    <div class="cta-buttons">
+      <a href="sejours-personnalises.html" class="btn btn-primary">✓ Créer mon séjour</a>
+      <a href="contact.html" class="btn btn-secondary">💬 Nous contacter</a>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <div class="stats-container">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Années d'expérience</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Destinations & Activités</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Taux de satisfaction</div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- FEATURED DESTINATIONS -->
+    <section class="section">
+      <h2>🗺️ Nos Destinations Principales</h2>
+      <div class="destinations-intro">
+        <p>Explorez les plus belles régions de Thaïlande avec nos guides experts</p>
+      </div>
+      <div class="destinations-grid">
+        <div class="destination-card">
+          <div class="destination-image">
+            <img src="images/bangkok.jpg" alt="Bangkok" onerror="this.src='images/fond-principal.jpg'">
+          </div>
+          <div class="destination-info">
+            <h3>Bangkok</h3>
+            <p>La capitale dynamique avec ses temples dorés, marchés flottants et vie nocturne vibrante.</p>
+            <a href="bangkok.html">Découvrir →</a>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-image">
+            <img src="images/chiangmai.jpg" alt="Chiang Mai" onerror="this.src='images/fond-principal.jpg'">
+          </div>
+          <div class="destination-info">
+            <h3>Chiang Mai</h3>
+            <p>La rose du nord : temples anciens, culture riche et nature montagneuse spectaculaire.</p>
+            <a href="chiangmai.html">Découvrir →</a>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-image">
+            <img src="images/phuket.jpg" alt="Phuket" onerror="this.src='images/fond-principal.jpg'">
+          </div>
+          <div class="destination-info">
+            <h3>Phuket</h3>
+            <p>Les plages paradisiaques, eaux turquoise et activités nautiques exceptionnelles.</p>
+            <a href="phuket.html">Découvrir →</a>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-image">
+            <img src="images/pattaya.jpg" alt="Pattaya" onerror="this.src='images/fond-principal.jpg'">
+          </div>
+          <div class="destination-info">
+            <h3>Pattaya</h3>
+            <p>Station côtière vibrante avec plages, loisirs aquatiques et vie nocturne animée.</p>
+            <a href="pattaya.html">Découvrir →</a>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-image">
+            <img src="images/phi-phi-island.jpg" alt="Îles Phi Phi" onerror="this.src='images/fond-principal.jpg'">
+          </div>
+          <div class="destination-info">
+            <h3>Îles Phi Phi</h3>
+            <p>Îles paradisiaques avec plages de rêve, falaises calcaires et snorkeling incroyable.</p>
+            <a href="ilesphiphi.html">Découvrir →</a>
+          </div>
+        </div>
+        <div class="destination-card">
+          <div class="destination-image">
+            <img src="images/logo-reves-evasions.jpg" alt="Séjours Personnalisés" onerror="this.src='images/fond-principal.jpg'">
+          </div>
+          <div class="destination-info">
+            <h3>Séjours Personnalisés</h3>
+            <p>Créez votre propre expérience adaptée à vos envies, budget et préférences.</p>
+            <a href="sejours-personnalises.html">Créer →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section">
+      <h2>💎 Pourquoi Nous Choisir ?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Authentique</h3>
+          <p>Expériences uniques loin des circuits touristiques classiques</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Guides Experts</h3>
+          <p>Connaisseurs locaux passionnés qui partagent vrai savoir</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Support 24/7</h3>
+          <p>Assistance en français disponible jour et nuit</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>Meilleur Rapport</h3>
+          <p>Qualité premium à prix compétitifs et transparents</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>Garanti Satisfait</h3>
+          <p>Si vous n'aimez pas, nous trouvons une solution</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌍</div>
+          <h3>Responsable</h3>
+          <p>Tourisme durable respectueux de la culture locale</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section">
+      <h2>🎁 Nos Services</h2>
+      <div class="services-section">
+        <div class="services-grid">
+          <div class="service-item">
+            <h3>🏨 Hébergement</h3>
+            <ul>
+              <li>Sélection d'hôtels premium</li>
+              <li>Villas privées luxe</li>
+              <li>Resorts all-inclusive</li>
+              <li>Options économiques</li>
+            </ul>
+          </div>
+          <div class="service-item">
+            <h3>🚗 Transport</h3>
+            <ul>
+              <li>Transfert aéroport privé</li>
+              <li>Guide courrier professionnel</li>
+              <li>Taxis arrangés</li>
+              <li>Tours organisés</li>
+            </ul>
+          </div>
+          <div class="service-item">
+            <h3>🎯 Activités</h3>
+            <ul>
+              <li>Visites guidées temples</li>
+              <li>Plongée & snorkeling</li>
+              <li>Cours cuisine thaï</li>
+              <li>Spa & bien-être</li>
+            </ul>
+          </div>
+          <div class="service-item">
+            <h3>📋 Assistance</h3>
+            <ul>
+              <li>Aide visa</li>
+              <li>Assurance voyage</li>
+              <li>Conseils pratiques</li>
+              <li>Support 24h/24</li>
+            </ul>
+          </div>
+          <div class="service-item">
+            <h3>🍽️ Gastronomie</h3>
+            <ul>
+              <li>Restaurants recommandés</li>
+              <li>Marchés locaux</li>
+              <li>Cours cuisine</li>
+              <li>Expériences culinaires</li>
+            </ul>
+          </div>
+          <div class="service-item">
+            <h3>📸 Extras</h3>
+            <ul>
+              <li>Mini packages</li>
+              <li>Photographie séjour</li>
+              <li>Excursions spéciales</li>
+              <li>Packages flexibles</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS PREVIEW -->
+    <section class="section">
+      <h2>⭐ Ce Que Disent Nos Clients</h2>
+      <div class="testimonials-preview">
+        <div class="testimonial-mini">
+          <div class="stars">★★★★★</div>
+          <p>"Une expérience absolument extraordinaire ! L'équipe a vraiment compris ce que nous voulions. Merci d'avoir rendu notre lune de miel inoubliable !"</p>
+          <div class="author">— Marie & Thomas</div>
+        </div>
+        <div class="testimonial-mini">
+          <div class="stars">★★★★★</div>
+          <p>"Nous avons voyagé en famille et c'était parfait pour nos enfants. Les activités étaient bien dosées, meilleure décision de prendre cette agence !"</p>
+          <div class="author">— Pierre Dubois</div>
+        </div>
+        <div class="testimonial-mini">
+          <div class="stars">★★★★★</div>
+          <p>"Je suis parti seul et j'avais peur de m'ennuyer. L'équipe m'a proposé des activités de groupe formidables. Incroyable !"</p>
+          <div class="author">— Lucas Martin</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="temoignages.html" class="btn btn-primary">Voir tous les avis →</a>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section">
+      <div class="cta-showcase">
+        <h2>🌟 Prêt pour l'Aventure ?</h2>
+        <p>Laissez-nous créer votre séjour de rêve en Thaïlande</p>
+        <a href="sejours-personnalises.html" class="btn btn-primary">✓ Démarrer maintenant</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Thaïlande – Rêves & Évasions | WhatsApp : <a href="https://wa.me/84327516422">+84 32751 6422</a></p>
+    <p><a href="#">Conditions</a> | <a href="#">Confidentialité</a> | <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
